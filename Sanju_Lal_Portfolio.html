@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -93,11 +93,9 @@ img,svg{ display:block; }
   *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
 }
 
-/* reveal animation */
 .reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
 .reveal.in-view{ opacity:1; transform:translateY(0); }
 
-/* ---------- Top bar ---------- */
 .topbar{
   border-bottom:1px solid var(--border-muted); background:var(--canvas-subtle);
   padding:14px 24px; position:sticky; top:0; z-index:60;
@@ -116,7 +114,6 @@ img,svg{ display:block; }
 .brand .path b{ color:var(--fg); font-weight:600; }
 .topbar .btn{ padding:6px 14px; font-size:13px; }
 
-/* ---------- Buttons ---------- */
 .btn{
   font-family:var(--sans); font-size:14px; font-weight:500;
   padding:8px 16px; border-radius:6px; border:1px solid var(--border);
@@ -130,14 +127,12 @@ img,svg{ display:block; }
 .btn-primary:hover{ background:var(--success-hover); }
 .btn-block{ width:100%; justify-content:center; }
 
-/* ---------- Layout ---------- */
 .layout{
   max-width:1180px; margin:0 auto; padding:40px 24px 0;
   display:grid; grid-template-columns:296px 1fr; gap:48px; align-items:start;
 }
 @media (max-width:900px){ .layout{ grid-template-columns:1fr; } }
 
-/* ---------- Sidebar ---------- */
 .sidebar{ position:sticky; top:78px; }
 @media (max-width:900px){ .sidebar{ position:static; margin-bottom:8px; } }
 
@@ -145,8 +140,10 @@ img,svg{ display:block; }
   width:200px; height:200px; border-radius:50%;
   background:linear-gradient(135deg,#1f6feb,#a371f7 55%,#3fb950);
   display:flex; align-items:center; justify-content:center;
-  font-family:var(--display,var(--sans)); font-weight:700; font-size:64px; color:#fff;
-  border:1px solid var(--border); margin-bottom:20px;
+  border:1px solid var(--border); margin-bottom:20px; overflow:hidden;
+}
+.avatar img {
+  width:100%; height:100%; object-fit:cover; display:block;
 }
 @media (max-width:900px){ .avatar{ width:120px; height:120px; font-size:40px; } }
 
@@ -180,7 +177,6 @@ img,svg{ display:block; }
   background:var(--done-dim); color:var(--done); border:1px solid rgba(163,113,247,0.3);
 }
 
-/* ---------- Tabs ---------- */
 .tabs{
   display:flex; gap:4px; border-bottom:1px solid var(--border-muted);
   margin-bottom:36px; overflow-x:auto;
@@ -193,7 +189,6 @@ img,svg{ display:block; }
 .tab.active{ color:var(--fg); border-color:var(--attention); font-weight:600; }
 .tab:hover:not(.active){ color:var(--fg); }
 
-/* ---------- README panel ---------- */
 .readme{
   border:1px solid var(--border); border-radius:8px; overflow:hidden; margin-bottom:44px;
 }
@@ -212,12 +207,10 @@ img,svg{ display:block; }
 .readme-body p:last-child{ margin-bottom:0; }
 .readme-body .prompt{ color:var(--success); font-family:var(--mono); }
 
-/* ---------- Sections ---------- */
 .tabpanel{ margin-bottom:64px; scroll-margin-top:130px; }
 .tabpanel h2{ font-size:1.35rem; font-weight:600; margin-bottom:6px; }
 .tabpanel > .sub{ color:var(--fg-muted); font-size:14px; margin-bottom:24px; }
 
-/* ---------- Repo cards (skills) ---------- */
 .repo-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
 .repo-card{
   border:1px solid var(--border); border-radius:10px; padding:20px;
@@ -240,7 +233,6 @@ img,svg{ display:block; }
 .repo-card.learning .tags span{ background:var(--attention-dim); color:var(--attention); border-color:rgba(210,153,34,0.3); }
 .lang-dot{ width:9px; height:9px; border-radius:50%; background:var(--accent); flex-shrink:0; }
 
-/* ---------- Commit timeline (experience) ---------- */
 .exp-header{
   display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
   border:1px solid var(--border); border-radius:10px 10px 0 0; padding:16px 20px;
@@ -279,7 +271,6 @@ img,svg{ display:block; }
   padding:2px 8px; border-radius:6px; white-space:nowrap; height:fit-content;
 }
 
-/* ---------- Metrics ---------- */
 .metrics-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; margin-bottom:28px; }
 .metric{ border:1px solid var(--border); border-radius:10px; padding:20px; text-align:center; }
 .metric .num{ font-size:1.9rem; font-weight:700; color:var(--success); }
@@ -297,7 +288,6 @@ img,svg{ display:block; }
   padding:5px 12px; border-radius:14px;
 }
 
-/* ---------- Contact ---------- */
 .contact-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; }
 .contact-card{
   border:1px solid var(--border); border-radius:10px; padding:20px;
@@ -318,7 +308,6 @@ footer .heart{ color:var(--done); }
 </head>
 <body>
 
-<!-- ICON DEFS -->
 <svg width="0" height="0" style="position:absolute">
 <defs>
 <symbol id="i-pin" viewBox="0 0 16 16"><path fill="currentColor" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10Zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></symbol>
@@ -348,17 +337,15 @@ footer .heart{ color:var(--done); }
         <svg viewBox="0 0 16 16" width="16" height="16"><use href="#i-check"/></svg> Download Resume
       </a>
       <a class="btn" href="https://www.linkedin.com/in/sanju-lal-s-s-13745a189" target="_blank" rel="noopener">
-        <svg viewBox="0 0 16 16" width="16" height="16"><use href="#i-star"/></svg> Connect
+        <svg viewBox="0 0 16 16" width="16" height="16"><use href="#i-link"/></svg> Connect
       </a>
     </div>
   </div>
 </div>
 
 <div class="layout">
-
-  <!-- SIDEBAR -->
   <aside class="sidebar reveal">
-    <div class="avatar">SL</div>
+    <div class="avatar"><img src="assets/sanju_profile.jpg" alt="Sanju Lal S S" /></div>
     <h1>Sanju Lal S S</h1>
     <div class="handle">sanju-lal-ss</div>
     <p class="bio">Senior Software Engineer building reliable backend systems in Python &amp; .NET — automated, deployed, and kept running with AWS and Jenkins.</p>
@@ -385,7 +372,7 @@ footer .heart{ color:var(--done); }
     </div>
 
     <div class="stats-row">
-      <div><div class="num">4.5+</div><div class="lbl">years exp</div></div>
+      <div><div class="num">5+</div><div class="lbl">years exp</div></div>
       <div><div class="num">3</div><div class="lbl">promotions</div></div>
       <div><div class="num">4</div><div class="lbl">AWS services</div></div>
     </div>
@@ -399,7 +386,6 @@ footer .heart{ color:var(--done); }
     </div>
   </aside>
 
-  <!-- MAIN -->
   <main>
     <nav class="tabs" id="tabs">
       <a href="#overview" class="tab active" data-tab="overview"><svg><use href="#i-book"/></svg>Overview</a>
@@ -409,7 +395,6 @@ footer .heart{ color:var(--done); }
       <a href="#contact" class="tab" data-tab="contact"><svg><use href="#i-mail"/></svg>Contact</a>
     </nav>
 
-    <!-- OVERVIEW -->
     <section id="overview" class="tabpanel reveal">
       <div class="readme">
         <div class="readme-head">
@@ -418,7 +403,7 @@ footer .heart{ color:var(--done); }
         </div>
         <div class="readme-body">
           <p><span class="prompt">$</span> whoami</p>
-          <p>Senior Software Engineer with 4.5+ years designing, building, and supporting backend applications and cloud-based product deployments. I work mainly in Python (FastAPI) and .NET/C#, ship through CI/CD pipelines built on Jenkins, and run infrastructure on AWS — ECS, EC2, Lambda, and S3.</p>
+          <p>Senior Software Engineer with 5+ years designing, building, and supporting backend applications and cloud-based product deployments. I work mainly in Python (FastAPI) and .NET/C#, ship through CI/CD pipelines built on Jenkins, and run infrastructure on AWS — ECS, EC2, Lambda, and S3.</p>
           <p>I'm the person teams call when production breaks. Diagnosing critical issues under pressure, then automating the process so they don't happen again, is where I do my best work — alongside a growing focus on GenAI-assisted tooling to cut manual effort across the delivery pipeline.</p>
           <p>Currently deepening my AWS cloud expertise and picking up TypeScript and Angular to round out the stack end-to-end.</p>
         </div>
@@ -433,7 +418,7 @@ footer .heart{ color:var(--done); }
         <div class="insight-card">
           <div class="eyebrow">Highlights</div>
           <ul class="insight-list">
-            <li>4.5+ years of hands-on backend and cloud engineering</li>
+            <li>5+ years of hands-on backend and cloud engineering</li>
             <li>Experience across Python, .NET, AWS, Jenkins, and CI/CD</li>
             <li>Known for troubleshooting critical issues and turning them into repeatable automation</li>
           </ul>
@@ -441,12 +426,10 @@ footer .heart{ color:var(--done); }
       </div>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills" class="tabpanel reveal">
       <h2>Pinned skills</h2>
       <p class="sub">Grouped the way I'd organize repositories — by what they're for.</p>
       <div class="repo-grid">
-
         <div class="repo-card">
           <div class="repo-card-top"><svg viewBox="0 0 16 16"><use href="#i-code"/></svg><span class="name">languages-frameworks</span></div>
           <div class="desc">Python (3.8–3.13), FastAPI, C#, .NET Framework 4.5–4.8, .NET Core 3.1, .NET 6, ASP.NET</div>
@@ -482,11 +465,9 @@ footer .heart{ color:var(--done); }
           <div class="desc">TypeScript, Angular (frontend development), and deepening AWS Cloud expertise</div>
           <div class="tags"><span><span class="lang-dot"></span> TypeScript</span><span>Angular</span><span>AWS Cloud</span></div>
         </div>
-
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience" class="tabpanel reveal">
       <h2>Experience</h2>
       <p class="sub">A commit history of what I've shipped and supported.</p>
@@ -506,7 +487,6 @@ footer .heart{ color:var(--done); }
         <span class="step final">✓ Senior Engineer</span>
       </div>
       <div class="commit-log">
-
         <div class="commit">
           <div class="rail"><div class="node"></div></div>
           <div class="msg"><b>Backend systems:</b> design and build scalable, high-performance applications using Python (3.8–3.13) and .NET (C#, .NET Framework, .NET Core 3.1, .NET 6) with FastAPI and ASP.NET.</div>
@@ -542,16 +522,14 @@ footer .heart{ color:var(--done); }
           <div class="msg"><b>Continuous improvement:</b> independently design automation workflows and architectural patterns that raise team efficiency.</div>
           <div class="sha">v0w1x2y</div>
         </div>
-
       </div>
     </section>
 
-    <!-- EDUCATION -->
     <section id="education" class="tabpanel reveal">
       <h2>Education</h2>
       <p class="sub">&nbsp;</p>
       <div class="metrics-row">
-        <div class="metric"><div class="num">4.5+</div><div class="lbl">YEARS EXPERIENCE</div></div>
+        <div class="metric"><div class="num">5+</div><div class="lbl">YEARS EXPERIENCE</div></div>
         <div class="metric"><div class="num">4</div><div class="lbl">AWS SERVICES</div></div>
         <div class="metric"><div class="num">2</div><div class="lbl">OS PLATFORMS</div></div>
       </div>
@@ -564,7 +542,6 @@ footer .heart{ color:var(--done); }
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="tabpanel reveal">
       <h2>Contact</h2>
       <p class="sub">Open to new opportunities — reach out through whichever channel works best.</p>
@@ -587,7 +564,6 @@ footer .heart{ color:var(--done); }
         </div>
       </div>
     </section>
-
   </main>
 </div>
 
